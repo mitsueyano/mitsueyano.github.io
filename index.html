@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luiza Mitsue Yano - Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">Luiza Mitsue Yano</a>
+    
+    <nav>
+      <button class="menuToggle" aria-label="Abrir menu">
+          <i class="fa-solid fa-bars icon-bars"></i>
+          <i class="fa-solid fa-xmark icon-close"></i>
+      </button>
+      
+      <ul>  
+        <li><a href="#">Sobre mim</a></li>
+        <li><a href="#projects">Projetos</a></li>
+        <li><a href="#contact">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="about">
+    <div class="text">
+      <h1>Sobre Mim</h1>
+      <p>Sou Técnica em Desenvolvimento de Sistemas e estou no caminho para concluir o ensino superior em Análise e Desenvolvimento de Sistemas até dezembro de 2026.</p>
+      <p>Aprecio a integridade entre o código e o hardware que o sustenta.</p>
+    </div>
+    <div class="perfil">
+      <img src="./img/perfil.jpg" alt="Foto de perfil"/>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Conhecimentos &amp; Tecnologias</h2>
+    <div class="grid">
+
+        <div class="card">
+            <h3>Frontend</h3>
+            <div class="tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>     
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Backend</h3>
+            <div class="tags">
+              <span>PHP</span>
+              <span>SQL</span>
+              <span>GML</span>
+            </div>
+        </div>
+
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projetos</h2>
+    <p class="subtitle">Alguns dos projetos em que me dediquei durante meus estudos</p>
+    <div class="timeline">
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contato</h2>
+    <div class="links">
+      <a href="mailto:mitsueyanoo@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/luiza-mitsue-yano-567a88197/" target="_blank">LinkedIn</a>
+      <a href="https://www.instagram.com/mitsue_yano/" target="_blank">Instagram</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© <span id="year"></span> Luiza Mitsue Yano</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="https://kit.fontawesome.com/46985895a5.js" crossorigin="anonymous"></script>
+</body>
+</html>

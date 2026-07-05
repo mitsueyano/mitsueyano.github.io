@@ -1,0 +1,26 @@
+[
+    {
+    "year": "2026",
+    "title": "Fatec Portas Fechadas",
+    "institution": "FATEC Deputado Ary Fossen",
+    "description": "Jogo de mistério em pixel art. A história acompanha uma caloura que investiga o desaparecimento de estudantes no campus guiada pela consciência de um ex-aluno preso na rede da faculdade, explorando conceitos de tecnologia e ambientes do campus.",
+    "image": "portasFechadas_switch.png",
+    "link": "fatecPortasFechadas"
+    },
+    {
+    "year": "2025",
+    "title": "EcoFrame",
+    "institution": "FATEC Deputado Ary Fossen",
+    "description": "Uma plataforma de ciência cidadã em formato de rede social desenvolvida para o registro e mapeamento colaborativo da biodiversidade local. O projeto também deu origem a um artigo sobre o engajamento comunitário na preservação ambiental, publicado no livro do evento Fatec Portas Abertas.",
+    "image": "ecoFrame.jpg",
+    "link": "ecoframe"
+    },
+    {
+    "year": "2022",
+    "title": "Cuidado Animal",
+    "institution": "ETEC Vasco Antonio Venchiarutti",
+    "description": "Sistema web desenvolvido para modernizar a recepção e o gerenciamento de informações em clínicas veterinárias. A plataforma otimiza o fluxo de atendimento de ponta a ponta e traz como diferencial a individualização do prontuário do pet por meio da leitura de QR Code.",
+    "image": "cuidadoAnimal.png",
+    "link": "cuidadoAnimal"
+    }
+]

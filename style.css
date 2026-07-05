@@ -1,0 +1,350 @@
+/* Pré definições */
+:root {
+
+  --header_transparency: #0d0d1a98;
+  --bg:       #0d0d1a;
+  --card:     #13131f;    
+  --card_buttons: #1a1a2e;
+  --border:   #2a2a40;
+  --focused: #6D28D9;
+  --emphasys:#A78BFA;
+  --glow: #7c3aed79;
+
+  --line:#7C3AED;
+
+  --text:     #f0f0f8;        
+  --text_dim:    #9494b0;
+
+  --mono: 'Space Mono', monospace;
+  --sans: 'Space Grotesk', sans-serif;
+  --radius: 12px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html  { scroll-behavior: smooth; }
+body  { background: var(--bg); color: var(--text); font-family: var(--sans); line-height: 1.8; }
+a     { text-decoration: none; }
+ul    { list-style: none; }
+img   { max-width: 100%; display: block; }
+
+
+/* Header*/
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1% 5%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--header_transparency);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-family: var(--mono);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--emphasys);
+}
+
+.menuToggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.4em;
+    cursor: pointer;
+}
+
+nav ul{
+  display: flex;
+  gap: 1.25rem;
+}
+  
+nav a {
+  font-size: 0.9rem;
+  color: var(--text_dim);
+  font-weight: 500;
+  transition: color 0.2s; 
+}
+nav a:hover {
+  color: var(--emphasys); 
+}
+
+/* Sections */
+section {
+  text-align: justify;
+  padding: 5% 5%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+section h1, section h2 {
+  font-size: clamp(1.6rem, 4vw, 2.2rem); /* clamp (fonte responsiva) */
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+}
+
+/* Sobre Mim */
+#about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+#about h1 
+{
+  margin-bottom: 1.25rem; 
+}
+
+#about .text p {
+  color: var(--text_dim);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+#about .perfil {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+#about .perfil img {
+  position: relative;
+  z-index: 1;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%; 
+}
+
+
+/* Glow */
+#about .perfil::before {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: var(--glow);
+  filter: blur(60px);
+}
+
+/* Habilidades */
+#skills .grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5%;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.card:hover {
+  border-color: var(--focused);
+  transform: translateY(-3px);
+  cursor: default;
+}
+
+.card h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tags span {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background: var(--card_buttons);
+  border: 1px solid var(--border);
+  color: var(--text_dim);
+  transition: background 0.2s, color 0.2s;
+}
+
+.tags span:hover {
+  color: var(--emphasys);
+  border-color: var(--focused);
+}
+
+/* Projetos */
+#projects .subtitle {
+  color: var(--text_dim);
+  font-size: 0.95rem;
+  margin-top: -1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.timeline {
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 34px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--line), transparent);
+}
+
+.timeline .item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.timeline .year {
+  min-width: 68px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--line);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 18px var(--glow);
+  flex-shrink: 0;
+}
+
+.timeline .card {
+  flex: 1;
+  padding: 1.25rem 1.5rem;
+}
+
+.timeline .card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.timeline .card .inst {
+  font-size: 0.85rem;
+  color: var(--emphasys);
+  margin-bottom: 0.6rem;
+}
+
+.timeline .card p {
+  font-size: 0.88rem;
+  color: var(--text_dim);
+}
+
+.timeline .card img{
+  margin-top: 0.75rem;
+}
+
+.timeline .card a {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--emphasys);
+  border-bottom: 1px solid var(--focused);
+  transition: color 0.2s;
+}
+
+.timeline .card a:hover { color: #fff; }
+
+/* Contato */
+#contact .links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+#contact .links a {
+  font-size: 0.95rem;
+  color: var(--emphasys);
+  border-bottom: 1px solid var(--focused);
+  transition: color 0.2s;
+}
+
+#contact .links a:hover { 
+  color: #fff; 
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2.5rem 5%;
+  color: var(--text_dim);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  #about {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  #about .perfil { 
+    order: -1; 
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  #skills .grid { 
+    grid-template-columns: 1fr; 
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    padding: 1rem 5%;
+    border-bottom: 1px solid var(--border);
+    gap: 1.25rem;
+  }
+  nav ul.open { 
+    display: flex; 
+  }
+
+  .menuToggle {
+    color: var(--emphasys);
+    display: block !important;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 110;
+  }
+
+  .menuToggle .icon-close,
+  .menuToggle svg.icon-close {
+    display: none !important;
+  }
+
+  .menuToggle.open .icon-bars,
+  .menuToggle.open svg.icon-bars {
+    display: none !important;
+  }
+
+  .menuToggle.open .icon-close,
+  .menuToggle.open svg.icon-close {
+    display: block !important;
+  }
+}
