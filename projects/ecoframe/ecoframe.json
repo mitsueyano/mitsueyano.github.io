@@ -1,0 +1,70 @@
+{
+    "title": "ecoframe",
+    "description": "Projeto desenvolvido para a disciplina de Engenharia de Software com o objetivo de criar uma plataforma de ciência cidadã focada no mapeamento colaborativo da fauna e flora. O sistema visa aproximar a comunidade científica da população através de ferramentas de registo de observações ecológicas e fóruns de discussão.",
+    "projectImages": [
+        {
+            "name": "ecoframe.png",
+            "description": "Página inicial"
+        },
+        {
+            "name": "ecoframe02.png",
+            "description": "Feed"
+        },
+        {
+            "name": "ecoframe03.png",
+            "description": "Registro de espécies"
+        },
+        {
+            "name": "ecoframe04.png",
+            "description": "Página de perfil"
+        },
+        {
+            "name": "ecoframe05.png",
+            "description": "Registro de ocorrências"
+        },
+        {
+            "name": "ecoframe06.png",
+            "description": "Cadastro de espécie"
+        }
+    ],
+    "technologies": [
+        {
+            "img": "fa-brands fa-php",
+            "name": "PHP",
+            "description": "Utilizado no desenvolvimento do backend para o controle de sessões de usuários comuns e especialistas, e a ligação segura à base de dados."
+        },
+        {
+           "img": "fa-solid fa-database",
+            "name": "MySQL",
+            "description": "Utilizado para armazenar dados de registos de espécies e suas geolocalizações, interações com conteúdos e o cadastro dos usuários"
+        },
+        {
+            "img": "fa-brands fa-square-js",
+            "name": "JavaScript",
+            "description": "Utilizado no frontend para automação, manipulação e atualização dinâmica das páginas."
+        },
+        {
+            "img": ["fa-brands fa-css3-alt", "fa-brands fa-html5"],
+            "name": "HTML & CSS",
+            "description": "Utilizados em conjunto para a construção de toda a interface visual e para o desenvolvimento de um design responsivo."
+        },
+        {
+            "img": "fa-solid fa-leaf",
+            "name": "iNaturalist & GBIF (API)",
+            "description": "Integradas para realizar a consulta, catalogação automática e validação taxonômica das espécies registradas pelos usuários."
+        },
+        {
+            "img": "fa-solid fa-cloud",
+            "name": "Cloudinary (API)",
+            "description": "Utilizada como serviço de nuvem para o armazenamento seguro, processamento e otimização do peso das imagens das ocorrências."
+        },
+        {
+            "img": "fa-solid fa-map",
+            "name": "OpenStreetMap - Nominatim (API)",
+            "description": "Integrada para renderizar o mapa interativo e realizar a geocodificação reversa, transformando as coordenadas do clique em endereços reais."
+        }
+
+    ],
+    "description2": "olha o link legal",
+    "link": "culturaNaPraca.pdf"
+}
