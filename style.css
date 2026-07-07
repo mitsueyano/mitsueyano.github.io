@@ -150,7 +150,9 @@ section h1, section h2 {
   grid-template-columns: repeat(2, 1fr);
   gap: 5%;
 }
-
+#skills h2{
+  text-align: start;
+}
 .card, .cardTech {
   cursor: pointer !important;
   background: var(--card);
