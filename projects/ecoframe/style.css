@@ -243,7 +243,6 @@ section {
 }
 .carousel_container {
 	width: 100%;
-	max-width: 1200px;
 	height: 200px;
 	position: relative;
 	perspective: 1000px;

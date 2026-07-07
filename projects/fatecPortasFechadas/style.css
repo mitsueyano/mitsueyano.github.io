@@ -11,6 +11,18 @@
     --mono: 'Average sans', monospace;
     --sans: 'Average sans', sans-serif;
     --radius: 12px;
+
+    scrollbar-color: var(--emphasys) #ffffff;
+}
+
+*::-webkit-scrollbar {
+    width: 5px !important;
+}
+*::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: var(--emphasys);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }

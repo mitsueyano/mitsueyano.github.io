@@ -18,6 +18,18 @@
   --mono: 'Space Mono', monospace;
   --sans: 'Space Grotesk', sans-serif;
   --radius: 12px;
+
+  scrollbar-color: var(--glow) #ffffff;
+}
+
+*::-webkit-scrollbar {
+    width: 5px !important;
+}
+*::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: var(--glow);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
