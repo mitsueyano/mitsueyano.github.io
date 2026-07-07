@@ -140,6 +140,7 @@ section h1, section h2 {
 }
 
 .card {
+  cursor: pointer !important;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);

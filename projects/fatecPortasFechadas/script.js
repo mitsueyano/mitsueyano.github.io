@@ -65,7 +65,7 @@ function loadProject() {
                 Demonstração: 
             </p>
             <div style="width:100%; display:flex; flex-direction:column; align-items:center; margin-top: 1rem">
-                <iframe style="border:2px solid #00ff880d; padding: 5px" width="560" height="315" src="${data.link}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/DpDRj33jf7Q?si=oRcbOBtMCS9YNpHD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <p><a style="color: #9494b0; text-decoration:underline; margin-top: 2px" href="${data.link}">${data.link}</a></p>
             </div>
         </div>`
