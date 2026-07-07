@@ -56,7 +56,7 @@
         {
             "img": "fa-solid fa-cloud",
             "name": "Cloudinary (API)",
-            "description": "Utilizada como serviço de nuvem para o armazenamento seguro, processamento e otimização do peso das imagens das ocorrências."
+            "description": "Utilizada como serviço de nuvem para o armazenamento seguro, processamento e otimização das imagens registradas"
         },
         {
             "img": "fa-solid fa-map",
