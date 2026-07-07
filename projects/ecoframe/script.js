@@ -1,13 +1,7 @@
 const navBar = document.getElementById('navbar')
 
-var projectsList = '';
-const listDesktop = document.getElementById('listDesktop')
-const desktopToggle = document.getElementById('desktopToggle');
-
-const mediaQuery = window.matchMedia('(max-width: 768px)');
-
 function loadProject() {
-  fetch('ecoframe.json')
+  fetch('./ecoframe.json')
     .then(response => {
       if (!response.ok) {
         console.log('Erro ao carregar o arquivo json');
@@ -16,17 +10,28 @@ function loadProject() {
     })  
     .then(data => {
         const descriptionElement = document.getElementById('projectDescription');
-        const descriptionElement2 = document.createElement('p');
-        const pdfViewerElement = document.getElementById('pdf');
+        const pdfLink = document.getElementById('pdfLink');
+        const pdfViewerElement = document.getElementById('pdfViewer');
 
         const imagesElement = document.getElementById('projectImages');
 
         descriptionElement.textContent = data.description;
-        descriptionElement2.textContent = data.description2;
+              
         
-        pdfViewerElement.src = "../../docs/" + data.link;
+        if (data.link && data.link.trim() !== "") {
+            pdfViewerElement.src = "../../docs/" + data.link;
+            pdfLink.innerHTML = data.link;
+        } else {
+            pdfViewerElement.style.display = "none"; 
+            pdfLink.innerHTML = "Documento indisponível";
+        }
+        if (data.linkCompleto && data.linkCompleto.trim() !== "") {
+            pdfLink.href = "../../docs/" + data.linkCompleto;
+        }
 
-        descriptionElement.parentNode.appendChild(descriptionElement2);
+
+        pdfLink.href = "../../docs/" + data.linkCompleto;
+        pdfLink.innerHTML = data.link
 
         // Imagens
         data.projectImages.forEach(img => {
@@ -49,7 +54,7 @@ function loadProject() {
             const imagem = imageElement.querySelector('.viewport img');
 
             imagem.onload = function() {
-                const proporcaoAlvo = 508 / 320;
+                const proporcaoAlvo = 347 / 280; // Tamanho da imagem média
                 const proporcaoImagem = imagem.naturalWidth / imagem.naturalHeight;
 
                 if (proporcaoImagem < proporcaoAlvo) {
@@ -206,16 +211,13 @@ function loadProject() {
 function checkResolution(e) {
     if (e.matches) {
         // Mobile
-        navBar.classList.toggle('mobile');
+        navBar.classList.toggle('mobile')
     } else {
        navBar.classList.remove('mobile');
 
     }
 }
 
-function menuDesktopToggle(){
-    desktopToggle.classList.toggle('show');
-}
 //Lista de projetos
 function setProjectsList(){
     listMobile.innerHTML = `
@@ -225,35 +227,6 @@ function setProjectsList(){
     listDesktop.innerHTML = `
         ${projectsList}
     `
-}
-
-function loadProjectsList() {
-  fetch('../../projects.json')
-    .then(response => {
-      if (!response.ok) {
-        console.log('Erro ao carregar o arquivo json');
-      }
-      return response.json();
-    })  
-    .then(data => {
-        data.forEach(project => {
-        const projectsTab = `
-            <li><a href="../../projects/${project.link}/">${project.title}</a></li>
-        `
-            projectsList += projectsTab;
-        });
-        setProjectsList();
-        checkResolution(mediaQuery);
-    }).catch(error => console.error('Erro:', error));
-}
-
-
-function getYear() {
-  const yearSpan = document.getElementById('year');
-  if (yearSpan) {
-    const currentYear = new Date().getFullYear();
-    yearSpan.textContent = currentYear;
-  }
 }
 
 // ------- //

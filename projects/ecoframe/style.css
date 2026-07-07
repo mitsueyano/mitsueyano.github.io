@@ -3,7 +3,7 @@
     --header_transparency: #777f65bd;
     --bg:#f2f2f2;
     --border:#9ea68f;
-    --footer:#777f65 !important;
+    --footer:#777f65;
     --emphasys:#232b12;
 
     --text:#0e0f0d;        
@@ -109,7 +109,7 @@ nav #headerTitle {
     color: var(--footer)!important;
 }
 
-nav a, span {
+nav a, nav span{
     font-size: 0.9rem;
     color: var(--bg) !important;
     font-weight: 500;
@@ -130,7 +130,7 @@ nav a:hover {
 /* Sections */
 section {
     text-align: justify !important;
-    padding: 3% 3%;
+    padding: 2% 2%;
     max-width: 80%;
     margin: 0 auto;
     background: var(--bg);
@@ -148,7 +148,7 @@ section {
 
 /* Imagens */
 .preview_scroll {
-    animation: scrollHint 1.8s ease-in-out;
+    animation: scrollHint 1.5s ease-in-out;
     animation-iteration-count: 2;
 }
 
@@ -164,18 +164,27 @@ section {
     }
 }
 
-#projectImages{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 12vh;
+#projectImages {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: start;
+    gap: 2rem;
+    width: 100%;
 }
-.cardBrowser.wide{
+
+/* 2. Força os dois primeiros cards a ocuparem a linha inteira */
+#projectImages .cardBrowser:nth-child(1),
+#projectImages .cardBrowser:nth-child(2) {
+    grid-column: span 2; 
     width: 65%;
-    background:var(--bg);
-    border:2px solid var(--border);
-    border-radius:10px;
+}
+
+.cardBrowser.wide {
+    width: 100%;
+    background: var(--bg);
+    border: 2px solid var(--border);
+    border-radius: 10px;
 }
 
 .browser-bar{
@@ -229,7 +238,9 @@ section {
 
 /* Tecnologias utilizadas */
 
-
+#technologies{
+    padding-bottom: 0;
+}
 .carousel_container {
 	width: 100%;
 	max-width: 1200px;
@@ -443,6 +454,60 @@ section {
 	padding-left: 3px;
 }
 
+/* PDF */
+#infos {
+    padding-top: 0;
+    text-align: end;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    min-height: 450px; 
+}
+
+#infos h2 {
+    width: 100%;
+    margin-top: 1rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+}
+#infos2{
+    padding-top: 1%;
+}
+
+#pdfViewerElement {
+    width: 60%;
+    height: 410px;
+    overflow: hidden;
+    resize: both;
+    
+    border: 4px solid var(--border); 
+    border-radius: 8px;
+    
+    min-width: 300px;
+    max-width: 100%;
+    min-height: 250px;
+}
+
+#pdfViewer {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+#imgDebateElement{
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+#imgDebateElement img{
+    border: 5px solid var(--border);
+    width: 40%;
+    height: 100%;
+}
 
 
 /* Footer */
@@ -451,7 +516,6 @@ footer {
     text-align: center;
     padding: 2.5rem 5%;
     color: var(--bg);
-    font-size: 0.85rem;
     border-top: 1px solid var(--border);
     backdrop-filter: blur(12px);
 }
@@ -459,7 +523,7 @@ footer {
 /* Resposividade */
 @media (max-width: 768px) {
     .section {
-        padding: 5% 5%;
+        padding: 1% 1%;
     } 
     
     #projectTitle{
@@ -482,6 +546,16 @@ footer {
         gap: 3rem;
     }
     .cardBrowser.wide{
+        width: 100%;
+    }
+
+    #projectImages {
+        grid-template-columns: 1fr;
+    }
+    
+    #projectImages .cardBrowser:nth-child(1),
+    #projectImages .cardBrowser:nth-child(2) {
+        grid-column: span 1;
         width: 100%;
     }
 

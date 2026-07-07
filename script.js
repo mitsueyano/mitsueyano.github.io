@@ -3,7 +3,7 @@ function loadProjects() {
   if (!timeline) return;
   timeline.innerHTML = '';
 
-  fetch('projects.json')
+  fetch('./projects.json')
     .then(response => {
       if (!response.ok) {
         console.log('Erro ao carregar o arquivo json');

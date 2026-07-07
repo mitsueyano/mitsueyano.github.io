@@ -8,8 +8,8 @@
     --text:     #f0f0f8;        
     --text_dim:    #9494b0;
 
-    --mono: 'Space Mono', monospace;
-    --sans: 'Space Grotesk', sans-serif;
+    --mono: 'Average sans', monospace;
+    --sans: 'Average sans', sans-serif;
     --radius: 12px;
 }
 
@@ -44,7 +44,7 @@ header {
 
 .logo {
     font-family: var(--mono);
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: var(--emphasys);
 }
@@ -85,7 +85,6 @@ nav ul {
     color: var(--text_dim);
 }
 nav a, span {
-    font-size: 0.9rem;
     color: var(--text_dim);
     font-weight: 500;
     transition: color 0.2s; 
@@ -113,14 +112,15 @@ section {
 #projectTitle {
     text-align: center;
     margin-bottom: 2rem;
+    font-size: 2.2rem !important;
 }
 #projectDescription {
+    font-size: 1.1rem;
     margin-bottom: 2rem;
 }
 #projectDescription2 {
     margin-top: 2rem;
     font-style: italic;
-    font-size: 0.9rem;
     padding: 1rem 0;
 }
 .glide__slide img {
@@ -176,7 +176,6 @@ display: grid;
 }
 
 .technologyCard {
-    font-size: 0.9rem;
     background: var(--bg);
     border: 1px solid var(--border);
     border-radius: var(--radius);
@@ -196,7 +195,6 @@ footer {
     text-align: center;
     padding: 2.5rem 5%;
     color: var(--text_dim);
-    font-size: 0.85rem;
     border-top: 1px solid var(--border);
     backdrop-filter: blur(12px);
 }
