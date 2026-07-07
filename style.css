@@ -151,7 +151,7 @@ section h1, section h2 {
   gap: 5%;
 }
 
-.card {
+.card, .cardTech {
   cursor: pointer !important;
   background: var(--card);
   border: 1px solid var(--border);
@@ -160,13 +160,16 @@ section h1, section h2 {
   transition: border-color 0.2s, transform 0.2s;
 }
 
-.card:hover {
+.cardTech:hover{
+  border-color: var(--focused);
+}
+.card:hover{
   border-color: var(--focused);
   transform: translateY(-3px);
   cursor: default;
 }
 
-.card h3 {
+.card h3, .cardTech h3 {
   font-size: 0.95rem;
   font-weight: 600;
   margin-bottom: 1rem;
@@ -323,9 +326,21 @@ footer {
   #skills .grid { 
     grid-template-columns: 1fr; 
   }
+  #contact h2{
+    margin-bottom: 1rem !important;
+  }
+  .links{
+    flex-direction: column !important;
+    gap: 0.8rem !important;
+  }
+  .links a{
+    border: none !important;
+  }
   .card{
-    padding: 0.8rem !important;
     margin-left: 20px;
+  }
+  .cardTech{
+    padding: 0.8rem !important;
   }
 
   .timeline .item{
