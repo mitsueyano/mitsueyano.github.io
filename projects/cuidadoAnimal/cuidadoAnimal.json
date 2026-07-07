@@ -1,15 +1,53 @@
 {
     "title": "ecoframe",
     "description": "Projeto desenvolvido como Trabalho de Conclusão de Curso (TCC) no ensino técnico, marcando o meu primeiro contato prático com o desenvolvimento Full Stack. A aplicação foi a oportunidade ideal para aplicar os conceitos básicos aprendidos, unindo a construção de uma interface dinâmica ao gerenciamento de banco de dados e à integração de recursos de hardware.",
-    "description2": "O projeto consiste no desenvolvimento de um Sistema Web de Gerenciamento para Clínicas Veterinárias, projetado para otimizar o fluxo de atendimento e a gestão de informações médicas. A aplicação individualiza o registro de dados dos animais de estimação, abrangendo histórico clínico completo, agendamento de consultas e dados proprietários, e inova ao integrar a tecnologia de leitura de QR Codes. Essa funcionalidade permite um acesso rápido e seguro ao perfil e ao prontuário do animal por parte dos profissionais da área, reduzindo o tempo de triagem e elevando a eficiência operacional das clínicas.",
+    "description2": "A plataforma consiste numa Plataforma de Gerenciamento para Clínicas Veterinárias, projetada para otimizar o fluxo de atendimento. O sistema centraliza o histórico clínico dos animais, os agendamentos e os dados dos tutores em um único lugar. O grande diferencial está na integração de QR Codes exclusivos para cada pet: ao realizar a leitura do código logo na entrada da clínica, o animal é inserido automaticamente na fila de espera do veterinário, enquanto seu prontuário completo é liberado para o profissional em tempo real. Essa automação elimina buscas manuais, acelera a triagem e otimiza todo o tempo de espera na recepção.",
     "link": "culturaNaPraca.pdf",
     "projectImages": [
-        "inicio.png",
+        "login.png",
+        "QRcode.png",
+        "clientes.png",
+        "cadastroCliente.png",
         "calendario.png",
         "calendarioInfo.png",
-        "clientes.png",
-        "novaConsulta.png",
         "vetAreaFila.png",
         "vetArea.jpg"
+    ],
+    "technologies":[
+        {
+            "img": "fa-brands fa-php",
+            "name": "PHP",
+            "description": "Utilizado no desenvolvimento do backend para o controle de sessões de usuários comuns e especialistas, e a ligação segura à base de dados."
+        },
+        {
+            "img": "fa-brands fa-html5",
+            "name": "HTML",
+            "description": "Responsável pela estruturação semântica das páginas web, organizando os formulários de cadastro, prontuários e a exibição dos dados dos animais."
+        },
+        {
+            "img": "fa-brands fa-css3-alt",
+            "name": "CSS",
+            "description": "Utilizado na estilização e identidade visual do sistema"
+        },
+        {
+            "img": "fa-brands fa-square-js",
+            "name": "JAVASCRIPT",
+            "description": "Aplicado na manipulação dinâmica do DOM, validações de formulários no front-end e no gerenciamento dos scripts de leitura da câmera."
+        },
+        {
+            "img": "fa-solid fa-file-code",
+            "name": "JSON",
+            "description": "Utilizado como uma base de dados leve para armazenar e renderizar de forma rápida a listagem das raças mais populares de cães e gatos no sistema."
+        },
+        {
+            "img": "fa-solid fa-database",
+            "name": "MYSQL",
+            "description": "Utilizado para armazenar os históricos clínicos, agendamentos e dados cadastrais de pets e tutores."
+        },
+        {
+            "img": "fa-solid fa-qrcode",
+            "name": "APIs & Bibliotecas",
+            "description": "Integração de APIs externas para busca automatizada de CEP e geração dinâmica de QR Codes. Uso da biblioteca Instascan para processar o sinal de vídeo da câmera (conectada via USB) diretamente no navegador, permitindo a leitura e a validação dos códigos em tempo real."
+        }
     ]
 }

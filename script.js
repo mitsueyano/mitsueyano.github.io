@@ -18,7 +18,7 @@ function loadProjects() {
 
         item.innerHTML = `
           <span class="year">${project.year}</span>
-          <div class="card">
+          <div class="card" onclick="window.location.href = './projects/${project.link}'")>
             <h3>${project.title}</h3>
             <p class="inst">${project.institution}</p>
             <p>${project.description}</p>

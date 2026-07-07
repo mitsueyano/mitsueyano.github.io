@@ -20,7 +20,30 @@ function loadProject() {
         data.projectImages.forEach( img => {
             const image = document.createElement('img');
             image.src = `../../img/cuidadoAnimal/${img}`;
+            image.alt = "Imagem do projeto";
             imagesElement.appendChild(image);
+        });
+        
+        // Tecnologias utilizadas
+        const projectTechnologies = document.getElementById("projectTechnologies");
+        projectTechnologies.innerHTML = '<div class="tech-grid-container"></div>';
+        const gridContainer = projectTechnologies.querySelector(".tech-grid-container");
+
+        data.technologies.forEach((tech) => {
+            const item = document.createElement('div');
+            item.classList.add('tech-grid-item');
+
+            item.innerHTML = `
+                <div class="tech-media-wrapper">
+                    <i class="${tech.img}"></i>
+                </div>
+                <div class="tech-grid-info">
+                    <h3 class="tech-grid-name">${tech.name}</h3>
+                    <p class="tech-grid-desc">${tech.description}</p>
+                </div>
+            `;
+
+            gridContainer.appendChild(item);
         });
     })}
 
