@@ -1,6 +1,6 @@
 /* Pré definições */
 :root {
-    --header_transparency: #2c476ee7;
+    --header_transparency: #2c476e;
     --bg:#f2f2f2;
     --border:#2c476e;
     --footer:#2c476e;
@@ -88,15 +88,37 @@ nav #headerTitle {
 }
 #listMobile{
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     align-items: center;
     justify-content: center;
     padding-bottom: 0.8rem;
     margin-bottom: 0.8rem;
-    border-bottom: 1px solid #ffffff
-    
+    border-bottom: 1px solid #ffffff;
 }
 
+#mobileToggle {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--bg);
+    cursor: pointer;
+    z-index: 101;
+}
+
+#mobileToggle .icon-close { 
+    display: none; 
+}
+#navbar.menu-open #mobileToggle .icon-bars { 
+    display: none; 
+}
+#navbar.menu-open #mobileToggle .icon-close { 
+    display: block; 
+}
 #desktopToggle a{
     color: var(--text) !important;
 }
@@ -141,11 +163,11 @@ section {
 }
 
 /* Imagem TCC */
-.project-main-content {
+.projectMainContent {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 1rem;
     width: 100%;
 }
 
@@ -154,11 +176,10 @@ section {
 }
 
 #tcc {
-    width: 25%;
+    width: 300px;
     display: flex;
     justify-content: center;
     margin: 0;
-    flex-shrink: 0;
 }
 
 #tcc img {
@@ -183,9 +204,9 @@ section {
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: 1rem;
 }
 #qrpdf img{
-    margin-top: 1rem;
     width: 30%;
 }
 
@@ -197,6 +218,12 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+#technologies h2{
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-top: 2rem;
 }
 #projectTechnologies{
     width: 80%;
@@ -283,11 +310,22 @@ footer {
     border-top: 1px solid var(--border);
     backdrop-filter: blur(12px);
 }
-@media (max-width: 768px) {
-    .section {
-        padding: 1% 1%;
+
+@media (max-width: 920px) {
+
+    header{
+        min-height: 80px;
+        margin-bottom: 20px;
+    }
+   
+    section {
+        padding: 1% 2% 5% 2%;
+        max-width: 100% !important;
     } 
-    
+    #technologies h2{
+        font-size: 1.4rem !important;
+        text-align: center;
+    }
     #projectTitle{
         font-size: 1.2rem;
     }
@@ -295,13 +333,23 @@ footer {
         font-size: 0.8rem;
         font-weight: 600;
     }
-    #listMobile{
-        padding: 0 !important;
-        gap: 1.2rem;
+    #imgsElement{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
     }
+   
     #desktopToggle{
         top: 80% !important;
         right: 0 !important;
+    }
+    
+    #qrpdf img{
+        width: 50%;
+        max-width: 800px;
+        aspect-ratio: 1 / 1.414;
+        height: auto;
+        display: block;
+        margin: 0 auto;
     }
 
     .tech-grid-item, 
@@ -310,17 +358,49 @@ footer {
         text-align: center !important;
         gap: 1.5rem;
     }
-    
     .tech-grid-item:nth-child(odd) .tech-grid-info,
     .tech-grid-item:nth-child(even) .tech-grid-info {
         text-align: center;
     }
-
-    .project-main-content {
+    .projectMainContent {
         flex-direction: column;
         gap: 1.5rem;
     }
-    #tcc {
-        width: 50%;
+}
+
+@media (max-width: 768px) {
+
+    .tech-media-wrapper{
+        width: 100px !important ;
+        height: 100px !important;
+    }
+    .tech-grid-name{
+        font-size: 1.2rem;
+    }
+    #projectTechnologies{
+        width: 90%;
+    }
+    #mobileToggle {
+         display: block; 
+    }
+    #listMobile {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top:63px;
+        left: 0;
+        width: 100%;
+        background: var(--header_transparency);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: 1rem;
+        z-index: 100;
+        border-top: 1px solid var(--emphasys);
+    }
+    #listMobile.open {
+        display: flex;
+    }
+    #navbar.menu-open #listMobile {
+        display: flex;
     }
 }

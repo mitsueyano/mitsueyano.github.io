@@ -145,10 +145,16 @@ section {
 
 /* Imagens */
 .glide__arrow{
-    font-weight: 700;
-    color: #ffffff80!important;
-    border-color: var(--bg)!important;
+    font-weight: 1000;
+    color: var(--text_dim)!important;
     background-color: var(--bg)!important;
+    border-color: var(--bg) !important;
+}
+.glide__arrow:hover{
+    color: var(--emphasys) !important;
+}
+.glide--swipeable{
+    cursor: default !important;
 }
 .glide{
     position: relative;
@@ -184,7 +190,7 @@ display: grid;
 }
 
 #technologies h2 {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .technologyCard {
@@ -201,6 +207,13 @@ display: grid;
     color: var(--text_dim);
 }
 
+#iframeContainer iframe {
+    width: 95%;
+    max-width: 560px;
+    aspect-ratio: 16/9;
+    height: auto;
+}
+
 /* Footer */
 footer {
     background: var(--bg);
@@ -213,6 +226,7 @@ footer {
 
 /* Resposividade */
 @media (max-width: 768px) {
+    
     .section {
         padding: 5% 5%;
     }
@@ -229,8 +243,8 @@ footer {
         border-bottom: 1px solid var(--border);
         gap: 1.25rem;
     }
-    nav ul.open { 
-        display: flex; 
+        nav ul.open {
+        display: flex;
     }
 
     #mobileToggle {
@@ -261,9 +275,26 @@ footer {
     .glide__slide img {
         max-width: 100%;
     }
-
+    .glide__arrow--right{
+        right:1rem !important;
+    }
+    .glide__arrow--left{
+        left:1rem !important;
+    }
+    #technologies h2{
+        padding-top: 2em !important;
+    }
     #projectTechnologies {
         grid-template-columns: 1fr;
+    }
+    #projectTechnologies p {
+        text-align: center;
+    }
+    .technologyCard{
+        padding: 0.6rem !important;
+    }
+    .technologyDescription{
+        font-size: 1rem !important;
     }
 
 }

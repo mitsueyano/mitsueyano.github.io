@@ -47,14 +47,31 @@ function loadProject() {
         });
     })}
 
+const mobileToggle = document.getElementById('mobileToggle');
+
+if (mobileToggle) {
+    mobileToggle.addEventListener('click', () => {
+        navBar.classList.toggle('menu-open');
+    });
+}
+
 //Menu
 function checkResolution(e) {
     if (e.matches) {
         // Mobile
-        navBar.classList.toggle('mobile')
+        desktopToggle.classList.remove('show');
+        listMobile.innerHTML = `
+            <li><a href="../../index.html">Início</a></li>
+            ${projectsList}
+        `;
     } else {
-       navBar.classList.remove('mobile');
-
+        // Desktop
+        mobileToggle.classList.remove('open');
+        listMobile.classList.remove('open');
+        listMobile.innerHTML = `
+            <li><a href="../../index.html">Início</a></li>
+            <li><span onclick="menuDesktopToggle()">Projetos</span></li>
+        `;
     }
 }
 

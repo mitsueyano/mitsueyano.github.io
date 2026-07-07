@@ -28,25 +28,28 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html  { scroll-behavior: smooth; }
-body  { background: var(--bg); color: var(--text); font-family: var(--sans); line-height: 1.8; }
+body  { background: var(--bg); color: var(--text); font-family: var(--sans); line-height: 1.8; overflow-x: hidden; }
 a     { text-decoration: none; }
 ul    { list-style: none;}
 img   { max-width: 100%; display: block;}
 
 
 /* Header*/
+/* Header*/
 header {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1% 5%;
+    padding: 10px 2%;
     position: sticky;
     top: 0;
     z-index: 100;
     background: #233101c7;
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
+    width: 100%;
 }
 
 .logo {
@@ -506,6 +509,7 @@ section {
     border: 5px solid var(--border);
     width: 40%;
     height: 100%;
+    min-width: 350px;
 }
 
 
@@ -520,7 +524,54 @@ footer {
 }
 
 /* Resposividade */
+@media (max-width: 920px) {
+    .arrows{
+        gap: 15rem;
+    }
+    small{
+        display: none;
+    }
+
+    header{
+        min-height: 80px;
+        margin-bottom: 20px;
+    }
+   
+    section {
+        padding: 1% 2% 5% 2%;
+        max-width: 100% !important;
+    } 
+    #technologies h2{
+        font-size: 1.4rem !important;
+        text-align: center;
+    }
+    .logo{
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+    #imgsElement{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+    }
+   
+    #desktopToggle{
+        top: 80% !important;
+        right: 0 !important;
+    }
+    #imgDebateElement{
+        flex-direction: column !important;
+        gap: 1rem;
+        align-items: center;
+    }
+}
+
 @media (max-width: 768px) {
+    #technologies{
+        margin-top: 1rem;
+    }
+    .carousel_container{
+        margin-top: 0 !important;
+    }
     .section {
         padding: 1% 1%;
     } 
@@ -533,8 +584,10 @@ footer {
         font-weight: 600;
     }
     #listMobile{
+        display: flex !important;
         border: none !important;
         padding-bottom: 0 !important;
+        margin-bottom: 0 !important;
     }
     #desktopToggle{
         top: 100% !important;
@@ -546,6 +599,7 @@ footer {
     }
     .cardBrowser.wide{
         width: 100%;
+        border: 1px solid var(--border) !important;
     }
 
     #projectImages {
@@ -555,12 +609,19 @@ footer {
     #projectImages .cardBrowser:nth-child(1),
     #projectImages .cardBrowser:nth-child(2) {
         grid-column: span 1;
-        width: 100%;
+        width: 95%;
+        border: 1px solid var(--border);
     }
-
+    #imgDebateElement img {
+        width: 70%;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+    }
     /* Carrossel */
     .carousel_container{
         height: 200px;
+        overflow: hidden;
     }
 	.about_title {
 		font-size: 4.5rem;

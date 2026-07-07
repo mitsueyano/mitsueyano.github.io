@@ -323,6 +323,21 @@ footer {
   #skills .grid { 
     grid-template-columns: 1fr; 
   }
+  .card{
+    padding: 0.8rem !important;
+    margin-left: 20px;
+  }
+
+  .timeline .item{
+    flex-direction: column;
+  }
+  .timeline .year{
+    position:relative;
+    right: 5%;
+  }
+  .timeline::before{
+    left: -2px;
+  }
 
   nav ul {
     display: none;
