@@ -1,5 +1,24 @@
-const listMobile = document.getElementById('listMobile')
+const listMobile = document.getElementById('listMobile');
 const mobileToggle = document.getElementById('mobileToggle');
+
+// Quando os vídeos estão visíveis na tela
+const videoObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const video = entry.target;
+    
+    if (entry.isIntersecting) {
+      // Visível
+      video.play().catch(error => {
+        console.log(error);
+      });
+    } else {
+      // Sai da tela
+      video.pause();
+    }
+  });
+}, {
+  threshold: 1 // Vídeo inteiro visível para iniciar
+});
 
 async function loadProjects() {
   const projectsHeader = document.querySelector("#projects");
@@ -41,7 +60,7 @@ function createCard(project) {
 
     project.projectFiles.forEach((file) => {
       const el = createMediaElement(file.name);
-      filesDiv.appendChild(el);
+      if (el) filesDiv.appendChild(el);
     });
 
     card.appendChild(filesDiv);
@@ -112,9 +131,9 @@ function createMediaElement(fileName) {
     wrapper.classList.add("media-item", "video-wrapper");
 
     const video = document.createElement("video");
-    video.autoplay = true;
     video.muted = true;
     video.controls = true;
+    video.loop = true;
 
     const source = document.createElement("source");
     source.src = path;
@@ -127,6 +146,8 @@ function createMediaElement(fileName) {
 
     wrapper.appendChild(video);
     wrapper.appendChild(badge);
+
+    videoObserver.observe(video);
 
     return wrapper;
   }
