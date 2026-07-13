@@ -1,0 +1,336 @@
+/* Pré definições */
+:root {
+
+  --header_transparency: #0d0d1abd;
+  --bg:       #0d0d1a;
+  --card:     #13131f;    
+  --card_buttons: #1a1a2e;
+  --border:   #2a2a40;
+  --focused: #6D28D9;
+  --emphasys:#A78BFA;
+  --glow: #7c3aed79;
+
+  --line:#7C3AED;
+
+  --text:     #f0f0f8;        
+  --text_dim:    #9494b0;
+
+  --mono: 'Space Mono', monospace;
+  --sans: 'Space Grotesk', sans-serif;
+  --radius: 12px;
+
+  scrollbar-color: var(--glow) #ffffff;
+}
+
+*::-webkit-scrollbar {
+    width: 5px !important;
+}
+*::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: var(--glow);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html  { scroll-behavior: smooth; }
+body  { background: var(--bg); color: var(--text); font-family: var(--sans); line-height: 1.8; }
+a     { text-decoration: none; }
+ul    { list-style: none; }
+img   { max-width: 100%; display: block; }
+
+
+/* Header*/
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1% 5%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--header_transparency);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-family: var(--mono);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--emphasys);
+}
+
+#mobileToggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.4em;
+    cursor: pointer;
+}
+#desktopToggle{
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 4%;
+    min-width: 100px;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+}
+#desktopToggle.show{
+    display: flex;
+}
+#desktopToggle ul{
+    margin: 1rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+}
+#listMobile a, #desktopToggle a{
+    color: var(--text_dim);
+}
+nav a, span {
+    color: var(--text_dim);
+    font-weight: 500;
+    transition: color 0.2s; 
+    user-select: none;
+}
+nav span:hover {
+    cursor: pointer;
+    color: var(--emphasys) !important; 
+}
+nav a:hover {
+    cursor: pointer;
+    color: var(--emphasys) !important; 
+}
+
+/* Sections */
+section {
+  text-align: justify;
+  padding: 5% 5%;
+  margin: 0 auto;
+}
+
+
+/* Projetos */
+#projects{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+#projects h2{
+  margin-bottom: 2rem;
+}
+.card{
+  margin-top: 5rem;
+}
+.card h3{
+  color: var(--emphasys);
+}
+.card p{
+  text-align: justify;
+}
+.projectTitle{
+  border-left: 2px solid var(--border);
+  padding-left: 1rem;
+}
+.link{
+  text-align: center !important;
+}
+.link a{
+  color: var(--emphasys);
+}
+.files{
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.files video, img{
+  max-width: 460px;
+  max-height: 290px;
+  border: 2px solid var(--emphasys);
+  object-fit: fill;
+}
+.files video:hover{
+  cursor: pointer;
+}
+.simulation{
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.simulation iframe{
+  width: 560px;
+  height: 350px;
+}
+.simulation p{
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+/* Indicação vídeo */
+.video-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.video-wrapper video {
+  display: block;
+}
+
+.video-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-family: "Space Mono", monospace;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  pointer-events: none;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2.5rem 5%;
+  color: var(--text_dim);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+}
+
+.simulation-mobile {
+  display: none;
+}
+
+
+@media (max-width: 1050px) {
+  .files{
+    flex-direction: column;
+  }
+}
+/* Responsividade */
+@media (max-width: 768px) {
+  header{
+    flex-direction:row !important;
+  }
+
+  .card p{
+    line-height: 1.5;
+  }
+ .section {
+        padding: 1% 4% 5% 4%;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg);
+        padding: 1rem 5%;
+        border-bottom: 1px solid var(--border);
+        gap: 1.25rem;
+    }
+    nav ul.open {
+        display: flex;
+    }
+
+    #mobileToggle {
+        color: var(--emphasys);
+        display: block !important;
+        position: absolute;
+        right: 5%;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 110;
+    }
+
+    #mobileToggle .icon-close,
+    #mobileToggle svg.icon-close {
+        display: none !important;
+    }
+
+    #mobileToggle.open .icon-bars,
+    #mobileToggle.open svg.icon-bars {
+        display: none !important;
+    }
+
+    #mobileToggle.open .icon-close,
+    #mobileToggle.open svg.icon-close {
+        display: block !important;
+    }
+
+  .files{
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+  }
+  .files video, img, iframe{
+    max-width: 100%;
+    height: auto;
+  }
+  .video-badge{
+    font-size: 0.65rem;
+  }
+
+  .simulation-desktop {
+    display: none;
+  }
+
+  .simulation-mobile {
+    display: block;
+  }
+
+  .simulation-mobile img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border: none;
+  }
+
+  .menuToggle {
+    color: var(--emphasys);
+    display: block !important;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 110;
+  }
+
+  .menuToggle .icon-close,
+  .menuToggle svg.icon-close {
+    display: none !important;
+  }
+
+  .menuToggle.open .icon-bars,
+  .menuToggle.open svg.icon-bars {
+    display: none !important;
+  }
+
+  .menuToggle.open .icon-close,
+  .menuToggle.open svg.icon-close {
+    display: block !important;
+  }
+}

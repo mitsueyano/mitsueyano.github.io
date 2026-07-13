@@ -22,6 +22,7 @@ function loadProjectsList() {
         `
             projectsList += projectsTab;
         });
+        projectsList += `<li><a href="../../projects/sistemasEmbarcados/">Sistemas Embarcados</a></li>`
         setProjectsList();
         checkResolution(mediaQuery);
     }).catch(error => console.error('Erro:', error));

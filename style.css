@@ -206,6 +206,9 @@ section h1, section h2 {
   margin-top: -1.5rem;
   margin-bottom: 2.5rem;
 }
+#projects .link{
+  color: var(--emphasys);
+}
 
 .timeline {
   position: relative;
