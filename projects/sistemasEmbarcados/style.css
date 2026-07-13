@@ -234,7 +234,11 @@ footer {
   header{
     flex-direction:row !important;
   }
-
+  #projects h1{
+    margin-top: 2rem;
+    text-align: left;
+    font-size: 1.5rem;
+  }
   .projectTitle{
     font-size: 1rem;
     text-align: left;
@@ -339,4 +343,13 @@ footer {
   .menuToggle.open svg.icon-close {
     display: block !important;
   }
+}
+@media (max-width: 435px) {
+  .card{
+    margin-top: 4rem;
+  }
+  #projects h1{
+    font-size: 1.3rem;
+  }
+
 }
