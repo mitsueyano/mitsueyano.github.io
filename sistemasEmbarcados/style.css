@@ -181,9 +181,7 @@ section {
   font-style: italic;
   font-size: 0.9rem;
 }
-a {
-  color: var(--emphasys);
-}
+
 /* Indicação vídeo */
 .video-wrapper {
   position: relative;
@@ -235,10 +233,6 @@ footer {
     flex-direction:row !important;
   }
 
-  .projectTitle{
-    font-size: 1rem;
-    text-align: left;
-  }
   .card p{
     line-height: 1.5;
   }

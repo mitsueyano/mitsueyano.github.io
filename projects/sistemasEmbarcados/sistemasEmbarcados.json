@@ -1,50 +1,50 @@
 [
-    {
-        "title": "Potenciômetro e Buzzer",
-        "description": "A ideia foi criar um indicador de nível com feedback visual e sonoro que responde ao estímulo físico em tempo real: conforme você gira o potenciômetro, o código processa a leitura analógica (que vai de 0 a 1023) e vai acendendo uma barra de 5 LEDs em sequência. Ao atingir o nível máximo da escala, o sistema entende que chegou ao limite e dispara um alerta intermitente através de um Buzzer.",
-        "projectFiles": [
-        {
+  {
+    "title": "Potenciômetro e Buzzer",
+    "description": "Desenvolvimento de um indicador de nível com feedback visual e sonoro que responde à interação do usuário em tempo real. Conforme o potenciômetro é girado, o código processa a leitura analógica (de 0 a 1023) para acender uma barra de 5 LEDs em sequência. Ao atingir o limite máximo da escala, o sistema dispara um alerta intermitente através de um Buzzer, ideal para simular alertas de sobrecarga ou proximidade.",
+    "projectFiles": [
+      {
             "name": "potenciometroebuzzer.mp4"
         },
         {
             "name": "potenciometroebuzzer.jpg"
         }
-        ],
-        "link": "d6FgCY3ASR1"
-    },
-    {
-        "title": "Dado Digital",  
-        "description": "A proposta era criar um circuito que, ao detectar o acionamento de um botão (INPUT_PULLUP), sorteia um número de 1 a 6 e exibe o resultado visualmente. Para que o comportamento ficasse idêntico ao de um dado físico, mapeei 7 LEDs em uma matriz e estruturei a lógica para acender as combinações exatas de cada face (como acender apenas o LED central para o número 1, ou as extremidades para o número 2). O detalhe técnico mais interessante desse projeto está na geração do número aleatório. Em computação, gerar aleatoriedade pura é um desafio. Para resolver isso no Arduino, utilizei a função randomSeed lendo uma porta analógica suspensa (analogRead(0)). Como o pino não está conectado a nada, ele capta o ruído eletromagnético do ambiente, servindo como uma semente única e garantindo que o sorteio seja verdadeiramente imprevisível a cada clique. Após exibir o número sorteado, o código gerencia o tempo de amostragem por meio de um delay antes de resetar os estados dos pinos para a próxima rodada.",
-        "projectFiles": [
-        {
-            "name": "dadodigital.mp4"
-        },
-        {
-            "name": "dadodigital.jpeg"
-        }
-        ],
-        "link": "lMNbbQQttJi"
-    },
+    ],
+    "link": "d6FgCY3ASR1"
+  },
   {
-        "title": "Semáforo Duplo",  
-        "description": "O objetivo desse projeto foi simular a sincronização de um cruzamento real de trânsito. A lógica do código gerencia três frentes ao mesmo tempo: dois semáforos veiculares distintos e um semáforo para pedestres. O grande desafio técnico aqui foi a temporização e a garantia de segurança dos estados — assegurar que, quando o Semáforo 1 estivesse aberto (verde), o Semáforo 2 e o sinal de pedestres estivessem obrigatoriamente fechados (vermelho). Outro ponto bem legal de implementar foi a etapa de transição: o código controla o tempo de alerta (amarelo) para os carros e faz o sinal dos pedestres piscar alternadamente no final do ciclo, replicando exatamente o comportamento visual que vemos nas ruas para indicar que o tempo de travessia está acabando.",
-        "projectFiles": [
-        {
-            "name": "semaforoduplo.mp4"
-        }
-        ],
-        "link": "hvKH2lB2av9"
-    },
-    {
-        "title": "Porta Automática (Servo e LCD)",
-        "description": "A proposta foi simular um controle de acesso inteligente para uma porta ou cancela automatizada. Ao pressionar o botão, o servo motor abre a porta e o display LCD inicia uma contagem regressiva de 10 segundos para o fechamento automático de segurança. O grande detalhe técnico aqui foi utilizar a função millis() para gerenciar o temporizador em segundo plano, garantindo que o botão continue respondendo instantaneamente se o usuário decidir fechar a porta antes do tempo. Além disso, estruturei um alerta visual no LCD e sonoro no Buzzer, que emite bipes intermitentes nos últimos 3 segundos para avisar que a porta está prestes a fechar.",
-        "link": "4b0UakweXcq",
-        "iframepic": "portaautomaticaIframe.png"
-    },
-    {
-        "title": "Monitor de Luminosidade com Alarme Silenciável",
-        "description": "A proposta foi criar um medidor de intensidade de luz com feedback visual e sonoro dinâmico. O sistema lê um sensor de luminosidade (LDR) e mapeia o sinal para uma escala de 0 a 9, exibindo o nível em tempo real através de um display de 7 segmentos. Ao atingir o limite máximo (nível 9), um trio de LEDs auxiliares acende e um alarme sonoro é disparado no Buzzer. O grande diferencial técnico é a adição de usabilidade prática: integrei um botão que atua como um interruptor lógico, permitindo ao usuário silenciar ou reativar o alarme a qualquer momento sem interromper o monitoramento visual do sensor.",
-        "link": "ef19ZFvJCu5",
-        "iframepic": "monitorluminosidadeIframe.png"
-    }
+    "title": "Dado Digital",  
+    "description": "Circuito interativo que sorteia valores de 1 a 6 ao detectar o acionamento de um botão. Para replicar a experiência de um dado físico, foram mapeados 7 LEDs em uma matriz e estruturada a lógica para exibir as faces exatas de cada número. A aleatoriedade do sistema é obtida através da leitura do ruído eletromagnético captado por uma porta analógica suspensa, garantindo sorteios imprevisíveis a cada clique.",
+    "projectFiles": [
+      {
+        "name": "dadodigital.mp4"
+      },
+      {
+        "name": "dadodigital.jpeg"
+      }
+    ],
+    "link": "lMNbbQQttJi"
+  },
+  {
+    "title": "Semáforo Duplo",  
+    "description": "Controle de tráfego que simula a sincronização de um cruzamento real, gerenciando de forma integrada dois semáforos para veículos e um para pedestres. O foco principal do desenvolvimento foi a segurança lógica do sistema, impedindo que sinais conflitantes fiquem abertos simultaneamente. O ciclo conta com uma transição realista, controlando o tempo da luz amarela para os carros e fazendo o sinal dos pedestres piscar antes do fechamento",
+    "projectFiles": [
+      {
+        "name": "semaforoduplo.mp4"
+      }
+    ],
+    "link": "hvKH2lB2av9"
+  },
+  {
+    "title": "Porta Automática (Servo e LCD)",
+    "description": "Simulador de controle de acesso para portas automatizadas. Ao pressionar o botão, um servo motor simula a abertura física e o display LCD inicia uma contagem regressiva de segurança de 10 segundos. O sistema foi programado para gerenciar o tempo sem interromper a execução do código principal, mantendo o botão totalmente responsivo para um fechamento manual imediato, além de emitir alertas sonoros nos últimos 3 segundos.",
+    "link": "4b0UakweXcq",
+    "iframepic": "portaautomaticaIframe.png"
+  },
+  {
+    "title": "Monitor de Luminosidade com Alarme Silenciável",
+    "description": "Medidor de intensidade de luz com feedback visual e sonoro. O sistema mapeia as leituras de um sensor LDR para uma escala de 0 a 9, exibida em tempo real em um display digital. Ao atingir o nível máximo, um trio de LEDs e um alarme são ativados. O circuito também possui um botão de controle que permite silenciar o alerta sonoro de forma independente, mantendo o monitoramento luminoso ativo.",
+    "link": "ef19ZFvJCu5",
+    "iframepic": "monitorluminosidadeIframe.png"
+  }
 ]
