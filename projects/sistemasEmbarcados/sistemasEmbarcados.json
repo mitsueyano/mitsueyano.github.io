@@ -1,6 +1,7 @@
 [
   {
     "title": "Potenciômetro e Buzzer",
+    "year": "2023",
     "description": "Desenvolvimento de um indicador de nível com feedback visual e sonoro que responde à interação do usuário em tempo real. Conforme o potenciômetro é girado, o código processa a leitura analógica (de 0 a 1023) para acender uma barra de 5 LEDs em sequência. Ao atingir o limite máximo da escala, o sistema dispara um alerta intermitente através de um Buzzer, ideal para simular alertas de sobrecarga ou proximidade.",
     "projectFiles": [
       {
@@ -14,6 +15,7 @@
   },
   {
     "title": "Dado Digital",  
+    "year": "2023",
     "description": "Circuito interativo que sorteia valores de 1 a 6 ao detectar o acionamento de um botão. Para replicar a experiência de um dado físico, foram mapeados 7 LEDs em uma matriz e estruturada a lógica para exibir as faces exatas de cada número. A aleatoriedade do sistema é obtida através da leitura do ruído eletromagnético captado por uma porta analógica suspensa, garantindo sorteios imprevisíveis a cada clique.",
     "projectFiles": [
       {
@@ -27,6 +29,7 @@
   },
   {
     "title": "Semáforo Duplo",  
+    "year": "2023",
     "description": "Controle de tráfego que simula a sincronização de um cruzamento real, gerenciando de forma integrada dois semáforos para veículos e um para pedestres. O foco principal do desenvolvimento foi a segurança lógica do sistema, impedindo que sinais conflitantes fiquem abertos simultaneamente. O ciclo conta com uma transição realista, controlando o tempo da luz amarela para os carros e fazendo o sinal dos pedestres piscar antes do fechamento",
     "projectFiles": [
       {
@@ -37,12 +40,14 @@
   },
   {
     "title": "Porta Automática (Servo e LCD)",
+    "year": "2024",
     "description": "Simulador de controle de acesso para portas automatizadas. Ao pressionar o botão, um servo motor simula a abertura física e o display LCD inicia uma contagem regressiva de segurança de 10 segundos. O sistema foi programado para gerenciar o tempo sem interromper a execução do código principal, mantendo o botão totalmente responsivo para um fechamento manual imediato, além de emitir alertas sonoros nos últimos 3 segundos.",
     "link": "4b0UakweXcq",
     "iframepic": "portaautomaticaIframe.png"
   },
   {
     "title": "Monitor de Luminosidade com Alarme Silenciável",
+    "year": "2024",
     "description": "Medidor de intensidade de luz com feedback visual e sonoro. O sistema mapeia as leituras de um sensor LDR para uma escala de 0 a 9, exibida em tempo real em um display digital. Ao atingir o nível máximo, um trio de LEDs e um alarme são ativados. O circuito também possui um botão de controle que permite silenciar o alerta sonoro de forma independente, mantendo o monitoramento luminoso ativo.",
     "link": "ef19ZFvJCu5",
     "iframepic": "monitorluminosidadeIframe.png"

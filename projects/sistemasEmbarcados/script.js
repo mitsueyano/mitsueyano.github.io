@@ -40,11 +40,20 @@ function createCard(project) {
   const card = document.createElement("div");
   card.classList.add("card");
 
-  // Título
+  const headerDiv = document.createElement("div");
+  headerDiv.classList.add("projectHeader");
+
   const title = document.createElement("h3");
   title.classList.add("projectTitle");
   title.textContent = project.title;
-  card.appendChild(title);
+  headerDiv.appendChild(title);
+
+  const year = document.createElement("span");
+  year.classList.add("projectYear");
+  year.textContent = project.year;
+  headerDiv.appendChild(year);
+
+  card.appendChild(headerDiv);
 
   // Descrição
   const description = document.createElement("p");

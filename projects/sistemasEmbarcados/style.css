@@ -129,6 +129,7 @@ section {
 #projects h2{
   margin-bottom: 2rem;
 }
+
 .card{
   margin-top: 5rem;
 }
@@ -138,9 +139,13 @@ section {
 .card p{
   text-align: justify;
 }
-.projectTitle{
+.projectHeader {
   border-left: 2px solid var(--border);
   padding-left: 1rem;
+  line-height: 1.3rem;
+}
+.projectYear {
+  font-size: 0.85rem;
 }
 .link{
   text-align: center !important;
